@@ -1,0 +1,4 @@
+Creacion de la base de datos siple
+Create database rc;
+CREATE table login(ID auto_increment int, user varchar,password varchar);
+CREATE table container(ID auto_increment int , name varchar,price float,exist int);
