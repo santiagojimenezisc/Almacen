@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelsStoreContainer" CdmEntityContainer="DataBase">
+    <EntitySetMapping Name="container">
+      <EntityTypeMapping TypeName="Models.container">
+        <MappingFragment StoreEntitySet="container">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="exist" ColumnName="exist" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="login">
+      <EntityTypeMapping TypeName="Models.login">
+        <MappingFragment StoreEntitySet="login">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="user" ColumnName="user" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

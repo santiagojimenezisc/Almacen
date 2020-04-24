@@ -1,0 +1,78 @@
+﻿@model SJ_Almacen.Models.container
+
+@{
+    ViewBag.Title = "Agregar Producto";
+}
+<style type="text/css">
+    .login-form {
+        width: 340px;
+        margin: 50px auto;
+    }
+
+        .login-form form {
+            margin-bottom: 15px;
+            background: #f7f7f7;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+        }
+
+        .login-form h2 {
+            margin: 0 0 15px;
+        }
+
+    .form-control, .btn {
+        min-height: 38px;
+        border-radius: 2px;
+    }
+
+    .btn {
+        font-size: 15px;
+        font-weight: bold;
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<div class="container ">
+    <div class="form-horizontal ">
+        <h4>Agregar Producto a Almacén</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.name, "Nombre del producto", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.price, "Precio del producto", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.price, "", new { @class = "text-danger " })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.exist, "Número en existencia", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.exist, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.exist, "", new { @class = "text-danger " })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-6">
+                <input type="submit" value="Agregar" class="btn btn-success" />
+                <a class="btn btn-warning " href="/containers/Index">Ver Productos</a>
+            </div>
+          
+        </div>
+    </div>
+</div>
+}
+
+
